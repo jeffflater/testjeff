@@ -1,7 +1,8 @@
 ---
-layout: page
-title: Test Automation Community of Practice (CoP)
-permalink: /community
+layout: sidebar
+title: Test Automation Community of Practice
+hero_image: /assets/img/testjeff-web-logo-min.png
+hero_alt: Community of Practice
 ---
 
 **Join the CoP** to get weekly tips, reusable patterns, and a monthly all-hands.  

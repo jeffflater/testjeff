@@ -11,3 +11,16 @@ logo: /assets/img/testjeff-web-logo-min.png
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Default front matter values
+defaults:
+  - scope:
+      path: ""        # applies to all pages
+      type: "pages"
+    values:
+      layout: sidebar
+  - scope:
+      path: ""        # applies to all posts
+      type: "posts"
+    values:
+      layout: sidebar

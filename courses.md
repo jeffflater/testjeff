@@ -1,7 +1,8 @@
 ---
-layout: page
+layout: sidebar
 title: Courses
-permalink: /courses
+hero_image: /assets/img/testjeff-web-logo-min.png
+hero_alt: Courses overview
 ---
 
 ### API Testing using Python, Behave, VS Code & GitHub Copilot

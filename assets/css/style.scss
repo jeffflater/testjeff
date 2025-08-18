@@ -4,14 +4,25 @@
 
 @import "{{ site.theme }}";  /* Load the Minimal theme first */
 
-/* TestJeff brand colors */
+/* ================================
+   TestJeff brand + layout variables
+   ================================ */
 :root {
+  /* Brand */
   --tj-green: #3ECF8E;  /* code brackets */
   --tj-dark:  #1E1E1E;  /* hoodie/text */
   --tj-light: #F9FAFB;  /* light background */
+
+  /* Layout (NEW) */
+  --gap: 24px;
+  --sidebar-w: 320px;   /* tweak width as desired */
+  --radius: 14px;
+  --border: 1px solid #d6e5da;
 }
 
-/* Global tweaks */
+/* =============
+   Global tweaks
+   ============= */
 body { color: var(--tj-dark); background: #fff; }
 a { color: var(--tj-dark); text-decoration: none; border-bottom: 1px solid transparent; }
 a:hover { color: var(--tj-dark); border-bottom-color: var(--tj-green); }
@@ -22,7 +33,69 @@ header h1, header h2, header a { color: var(--tj-dark); }
 footer { border-top: 4px solid var(--tj-green); margin-top: 32px; padding-top: 12px; color: #4B5563; }
 footer a:hover { border-bottom-color: var(--tj-green); }
 
-/* Home: link cards grid */
+/* ===========================
+   Sticky Sidebar Layout (NEW)
+   Used by _layouts/sidebar.html
+   =========================== */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar-w) 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+
+.sidebar {
+  position: sticky;
+  top: 16px;           /* distance from top when stuck */
+  align-self: start;   /* required for sticky inside grid */
+  height: fit-content;
+}
+
+.brand-card {
+  margin: 0 0 16px 0;
+  padding: 12px;
+  border: var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.brand-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.tagline { margin-top: 10px; font-size: .95rem; color: #3b3b3b; }
+
+.quick-links { display: grid; gap: 12px; }
+.ql {
+  display: block;
+  padding: 14px 16px;
+  border: var(--border);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: #0f172a;
+  background: #fbfffd;
+  transition: transform .15s ease;
+}
+.ql:hover { outline: 2px solid var(--tj-green); transform: translateY(-1px); }
+
+.content { min-height: 80vh; }
+
+/* On Minimal theme, ensure the page container doesn't interfere with grid */
+.wrapper { max-width: 1100px; }
+
+/* Mobile: fall back to one column; sticky not needed */
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; top: auto; }
+  .brand-card img { width: 180px; }
+}
+
+/* ==================
+   Home: link cards
+   ================== */
 .links-grid { display:grid; grid-template-columns:1fr; gap:16px; margin:24px 0; }
 @media (min-width:640px){ .links-grid { grid-template-columns:repeat(2,1fr); } }
 .link-card {
@@ -39,7 +112,9 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 .link-card:hover .link-title, .link-card:hover .link-sub { color: var(--tj-dark); }
 .icon { font-size:1.4rem; margin-bottom:8px; }
 
-/* Blog previews */
+/* ==============
+   Blog previews
+   ============== */
 .post-item { border-left:4px solid var(--tj-green); padding-left:12px; margin:0 0 16px 0; }
 .post-item a { font-weight:700; color: var(--tj-dark); }
 .post-date { color:#6B7280; font-size:.9em; }

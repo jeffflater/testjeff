@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {% include head-custom.html %}
+</head>
+<body>
+  <div class="wrapper">  <!-- keeps Minimal theme width -->
+    <div class="layout">
+      <!-- Sticky left column -->
+      <aside class="sidebar" role="complementary">
+        <figure class="brand-card">
+          <img
+            src="{{ page.hero_image | default: '/assets/img/testjeff-web-logo-min.png' | relative_url }}"
+            alt="{{ page.hero_alt | default: 'testJeff' }}"
+            width="320" height="320" loading="eager" decoding="async">
+          <figcaption class="tagline">
+            Sharing practical test automation with Python, Behave, VS Code & GitHub Copilot.
+          </figcaption>
+        </figure>
+
+        <nav class="quick-links" aria-label="Quick links">
+          <a class="ql" href="{{ '/community' | relative_url }}">🤝 Join the Test Automation CoP</a>
+          <a class="ql" href="{{ '/courses'   | relative_url }}">📚 Courses</a>
+          <a class="ql" href="https://github.com/jeffflater">💻 GitHub: TestJeff</a>
+          <a class="ql" href="{{ '/about'     | relative_url }}">🐱 About Jeff</a>
+        </nav>
+      </aside>
+
+      <!-- Page content -->
+      <main class="content" role="main">
+        {{ content }}
+      </main>
+    </div>
+  </div>
+</body>
+</html>
