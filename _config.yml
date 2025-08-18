@@ -1,7 +1,13 @@
-title: testJeff Blog
+title: testjeff
+description: Sharing practical test automation with Python, Behave, VS Code & GitHub Copilot.
+theme: jekyll-theme-minimal
+
+# If this is a PROJECT site (not username.github.io), set baseurl:
+# baseurl: "/YOUR_REPO_NAME"
+
 logo: /assets/img/logo_compressed.png
-author: Jeff
-description: Sharing my tech thoughts and updates.
-remote_theme: pages-themes/minimal@v0.2.0
+
+# Optional: nicer RSS + SEO (both supported by GitHub Pages)
 plugins:
-- jekyll-remote-theme # add this line to the plugins list if you already have one
+  - jekyll-feed
+  - jekyll-seo-tag

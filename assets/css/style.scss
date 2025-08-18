@@ -1,0 +1,45 @@
+---
+# Jekyll processes this SCSS into /assets/css/style.css
+---
+
+@import "{{ site.theme }}";  /* Load the Minimal theme first */
+
+/* TestJeff brand colors */
+:root {
+  --tj-green: #3ECF8E;  /* code brackets */
+  --tj-dark:  #1E1E1E;  /* hoodie/text */
+  --tj-light: #F9FAFB;  /* light background */
+}
+
+/* Global tweaks */
+body { color: var(--tj-dark); background: #fff; }
+a { color: var(--tj-dark); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover { color: var(--tj-dark); border-bottom-color: var(--tj-green); }
+
+/* Header + Footer brand bars */
+header { border-bottom: 4px solid var(--tj-green); padding-bottom: 10px; margin-bottom: 18px; }
+header h1, header h2, header a { color: var(--tj-dark); }
+footer { border-top: 4px solid var(--tj-green); margin-top: 32px; padding-top: 12px; color: #4B5563; }
+footer a:hover { border-bottom-color: var(--tj-green); }
+
+/* Home: link cards grid */
+.links-grid { display:grid; grid-template-columns:1fr; gap:16px; margin:24px 0; }
+@media (min-width:640px){ .links-grid { grid-template-columns:repeat(2,1fr); } }
+.link-card {
+  border: 2px solid var(--tj-green);
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: var(--tj-light);
+  display:flex; flex-direction:column; justify-content:center;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.link-card:hover { background: var(--tj-green); color: var(--tj-dark); transform: translateY(-2px); }
+.link-title { font-weight:700; font-size:1.1rem; margin:0 0 6px 0; color: var(--tj-dark); }
+.link-sub { color:#4B5563; margin:0; font-size:.9rem; }
+.link-card:hover .link-title, .link-card:hover .link-sub { color: var(--tj-dark); }
+.icon { font-size:1.4rem; margin-bottom:8px; }
+
+/* Blog previews */
+.post-item { border-left:4px solid var(--tj-green); padding-left:12px; margin:0 0 16px 0; }
+.post-item a { font-weight:700; color: var(--tj-dark); }
+.post-date { color:#6B7280; font-size:.9em; }
