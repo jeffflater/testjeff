@@ -1,7 +1,7 @@
 ---
 layout: sidebar
 title: Test Automation Community of Practice
-hero_image: /assets/img/testjeff-web-logo-min.png
+hero_image: /assets/img/testjeff-web-community-min.png
 hero_alt: Community of Practice
 ---
 

@@ -13,7 +13,7 @@
   --tj-dark:  #1E1E1E;  /* hoodie/text */
   --tj-light: #F9FAFB;  /* light background */
 
-  /* Layout (NEW) */
+  /* Layout */
   --gap: 24px;
   --sidebar-w: 320px;   /* tweak width as desired */
   --radius: 14px;
@@ -34,8 +34,7 @@ footer { border-top: 4px solid var(--tj-green); margin-top: 32px; padding-top: 1
 footer a:hover { border-bottom-color: var(--tj-green); }
 
 /* ===========================
-   Sticky Sidebar Layout (NEW)
-   Used by _layouts/sidebar.html
+   Sticky Sidebar Layout
    =========================== */
 .layout {
   display: grid;
@@ -51,7 +50,11 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   height: fit-content;
 }
 
+/* Brand card: smaller logo + text to the right */
 .brand-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;               /* space between logo and text */
   margin: 0 0 16px 0;
   padding: 12px;
   border: var(--border);
@@ -60,13 +63,18 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 }
 
 .brand-card img {
-  display: block;
-  width: 100%;
+  width: 90px;             /* smaller logo */
   height: auto;
-  border-radius: 10px;
+  border-radius: 8px;
+  flex-shrink: 0;          /* don’t let image shrink */
 }
 
-.tagline { margin-top: 10px; font-size: .95rem; color: #3b3b3b; }
+.tagline {
+  margin: 0;
+  font-size: .95rem;
+  color: #3b3b3b;
+  line-height: 1.4;
+}
 
 .quick-links { display: grid; gap: 12px; }
 .ql {
@@ -85,13 +93,6 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 
 /* On Minimal theme, ensure the page container doesn't interfere with grid */
 .wrapper { max-width: 1100px; }
-
-/* Mobile: fall back to one column; sticky not needed */
-@media (max-width: 860px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar { position: static; top: auto; }
-  .brand-card img { width: 180px; }
-}
 
 /* ==================
    Home: link cards
@@ -118,3 +119,17 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 .post-item { border-left:4px solid var(--tj-green); padding-left:12px; margin:0 0 16px 0; }
 .post-item a { font-weight:700; color: var(--tj-dark); }
 .post-date { color:#6B7280; font-size:.9em; }
+
+/* ======================
+   Responsive adjustments
+   ====================== */
+/* Mobile: single column; stack brand card for tight spaces */
+@media (max-width: 860px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; top: auto; }
+  .brand-card { flex-direction: row; } /* keep side-by-side on tablets */
+}
+@media (max-width: 480px) {
+  .brand-card { flex-direction: column; align-items: flex-start; }
+  .brand-card img { width: 80px; }
+}

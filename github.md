@@ -1,6 +1,6 @@
 ---
 title: GitHub
-hero_image: /assets/img/testjeff-web-logo-min.png
+hero_image: /assets/img/testjeff-web-github-min.png
 hero_alt: TestJeff on GitHub
 permalink: /github/
 ---
