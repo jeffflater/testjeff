@@ -5,7 +5,7 @@ theme: jekyll-theme-minimal
 # If this is a PROJECT site (not username.github.io), set baseurl:
 # baseurl: "/YOUR_REPO_NAME"
 
-logo: /assets/img/logo_compressed.png
+logo: /assets/img/testjeff-web-logo-min.png
 
 # Optional: nicer RSS + SEO (both supported by GitHub Pages)
 plugins:
