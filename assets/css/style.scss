@@ -113,6 +113,49 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 .link-card:hover .link-title, .link-card:hover .link-sub { color: var(--tj-dark); }
 .icon { font-size:1.4rem; margin-bottom:8px; }
 
+/* =========================================
+   Courses & GitHub: two feature-card layout
+   (mirrors your GitHub page visual style)
+   ========================================= */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap: var(--gap);
+  margin:16px 0 22px;
+}
+
+.feature-card{
+  display:block;
+  border:2px solid #cfeadf;              /* soft green outline like GitHub */
+  border-radius:12px;
+  padding:16px 18px;
+  background:#fff;
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+}
+
+.feature-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  border-color:#9fd6c1;
+}
+
+.feature-card__icon{ font-size:1.6rem; line-height:1; margin-bottom:.25rem; }
+.feature-card__title{ font-weight:700; font-size:1.1rem; margin:.1rem 0 .2rem; color:var(--tj-dark); }
+.feature-card__subtitle{ color:#556; font-size:.95rem; }
+
+/* Optional: small callout block used for “Quick Start” text */
+.quickstart{
+  border-left:4px solid var(--tj-green);
+  padding-left:12px;
+  margin:8px 0 18px;
+  color:#374151;
+}
+
+/* Stack feature cards on mobile */
+@media (max-width: 720px){
+  .feature-grid{ grid-template-columns:1fr; }
+}
+
 /* ==============
    Blog previews
    ============== */
