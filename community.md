@@ -1,38 +1,32 @@
 ---
 layout: sidebar
-title: Test Automation CoP
-hero_image: /assets/img/testjeff-web-community-min.png
-hero_alt: TestJeff community art
+title: Community (CoP)
+hero_image: /assets/img/testjeff-web-logo-min.png
+hero_alt: testJeff brand
 ---
 
-<div class="feature-cards">
+# Test Automation Community of Practice (CoP)
 
-  <a class="card" href="https://skool.link/YOUR-GROUP" target="_blank" rel="noopener">
-    <div class="card-icon">🤝</div>
-    <div class="card-body">
-      <h3 class="card-title">Join on Skool</h3>
-      <p class="card-sub">Free community · weekly tips · monthly all‑hands</p>
-    </div>
+Learn together, share patterns, and ship better tests—fast.
+
+<div class="feature-grid">
+  <a class="feature-card" href="https://www.skool.com/test-automation-cop" target="_blank" rel="noopener">
+    <div class="feature-card__icon">🤝</div>
+    <div class="feature-card__title">Join the CoP</div>
+    <div class="feature-card__subtitle">Free to start · Weekly tips · Monthly all-hands</div>
   </a>
 
-  <a class="card" href="/courses">
-    <div class="card-icon">📚</div>
-    <div class="card-body">
-      <h3 class="card-title">All Courses</h3>
-      <p class="card-sub">Explore everything from TestJeff</p>
-    </div>
+  <a class="feature-card" href="/community/all">
+    <div class="feature-card__icon">💬</div>
+    <div class="feature-card__title">All Discussions & Resources</div>
+    <div class="feature-card__subtitle">Threads, patterns, code snippets, and recordings</div>
   </a>
-
 </div>
 
-### What you’ll get
-- Weekly bite‑size testing tips & reusable patterns  
-- Monthly all‑hands with Q&A and live demos  
-- Real‑world Python/Behave, VS Code & GitHub Copilot workflows
+<div class="quickstart">
+  <strong>Quick Start:</strong> Join on Skool, introduce yourself, and grab the latest “API testing patterns” post to use on your next project.
+</div>
 
-### Who it’s for
-- Test engineers, SDETs, and developers who want practical automation that ships
-
-<p class="muted">
-  Ready to jump in? 👉 <a href="https://skool.link/YOUR-GROUP" target="_blank" rel="noopener">Join the Test Automation CoP on Skool</a>
-</p>
+- Community focus: practical automation patterns, CI/CD tips, and code reviews  
+- Monthly: live all-hands Q&A + lightning demos  
+- Always welcome: questions, show-and-tell, and job leads
