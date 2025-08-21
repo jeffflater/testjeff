@@ -15,8 +15,8 @@ I’m **Jeff Flater** — here to help you level up fast with **Python, Behave, 
 <div class="links-grid">
   <a class="link-card" href="{{ '/community' | relative_url }}">
     <div class="icon">🤝</div>
-    <div class="link-title">Join the Test Automation CoP</div>
-    <p class="link-sub">Community of Practice — free while we grow</p>
+    <div class="link-title">Join Our Group</div>
+    <p class="link-sub">Community of Practice — free and simple</p>
   </a>
 
   <a class="link-card" href="{{ '/courses' | relative_url }}">
