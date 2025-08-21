@@ -5,9 +5,10 @@ hero_image: /assets/img/testjeff-web-logo-min.png
 hero_alt: testJeff brand
 ---
 
-# Supercharge Your API Test Automation
-I’m **Jeff Flater** — here to help you level up fast with **Python, Behave, VS Code, and AI with GitHub Copilot**.  
-⚡ Build confidence, ship smarter tests, and finish a real-world project in just a **single weekend**.
+# Supercharge Your Test Automation  
+I’m **Jeff Flater** — creator of **TestJeff**.  
+Here to help you level up fast with modern tools, smart workflows, and AI-powered testing.  
+⚡ Build confidence, automate smarter, and finish real-world projects in record time.  
 
 ---
 
