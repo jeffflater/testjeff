@@ -9,28 +9,58 @@
    ================================ */
 :root {
   /* Brand */
-  --tj-green: #3ECF8E;  /* code brackets */
-  --tj-dark:  #1E1E1E;  /* hoodie/text */
-  --tj-light: #F9FAFB;  /* light background */
+  --tj-green: #3ECF8E;  /* code brackets / accent */
+  --tj-dark:  #1E1E1E;
+  --tj-light: #F9FAFB;
 
   /* Layout */
   --gap: 24px;
   --sidebar-w: 320px;   /* tweak width as desired */
   --radius: 14px;
-  --border: 1px solid #d6e5da;
+
+  /* Theme tokens (LIGHT defaults) */
+  --bg: #ffffff;
+  --panel: #ffffff;
+  --panel-alt: #F6F8FA;          /* soft card bg */
+  --text: #1E1E1E;
+  --muted: #4B5563;
+  --line: #d6e5da;               /* border color */
+  --link: var(--text);
+  --link-hover: var(--text);
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
 }
+
+/* Dark overrides */
+:root[data-theme='dark'] {
+  --bg: #0e1013;
+  --panel: #12151a;
+  --panel-alt: #101418;
+  --text: #e5e7eb;
+  --muted: #9aa4b2;
+  --line: rgba(255,255,255,0.14);
+  --link: #dbeafe;
+  --link-hover: #ffffff;
+
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.55);
+}
+
+/* Utility based on line color */
+:root { --border: 1px solid var(--line); }
 
 /* =============
    Global tweaks
    ============= */
-body { color: var(--tj-dark); background: #fff; }
-a { color: var(--tj-dark); text-decoration: none; border-bottom: 1px solid transparent; }
-a:hover { color: var(--tj-dark); border-bottom-color: var(--tj-green); }
+html, body { background: var(--bg); color: var(--text); }
+* { transition: background-color .2s linear, color .2s linear, border-color .2s linear; }
+
+a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; }
+a:hover { color: var(--link-hover); border-bottom-color: var(--tj-green); }
 
 /* Header + Footer brand bars */
 header { border-bottom: 4px solid var(--tj-green); padding-bottom: 10px; margin-bottom: 18px; }
-header h1, header h2, header a { color: var(--tj-dark); }
-footer { border-top: 4px solid var(--tj-green); margin-top: 32px; padding-top: 12px; color: #4B5563; }
+header h1, header h2, header a { color: var(--text); }
+footer { border-top: 4px solid var(--tj-green); margin-top: 32px; padding-top: 12px; color: var(--muted); }
 footer a:hover { border-bottom-color: var(--tj-green); }
 
 /* ===========================
@@ -59,7 +89,8 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   padding: 12px;
   border: var(--border);
   border-radius: var(--radius);
-  background: #fff;
+  background: var(--panel);
+  box-shadow: var(--shadow);
 }
 
 .brand-card img {
@@ -72,7 +103,7 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 .tagline {
   margin: 0;
   font-size: .95rem;
-  color: #3b3b3b;
+  color: var(--muted);
   line-height: 1.4;
 }
 
@@ -83,9 +114,10 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   border: var(--border);
   border-radius: var(--radius);
   text-decoration: none;
-  color: #0f172a;
-  background: #fbfffd;
-  transition: transform .15s ease;
+  color: var(--text);
+  background: var(--panel-alt);
+  transition: transform .15s ease, outline-color .2s ease, background .2s ease, color .2s ease;
+  box-shadow: var(--shadow);
 }
 .ql:hover { outline: 2px solid var(--tj-green); transform: translateY(-1px); }
 
@@ -103,13 +135,14 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   border: 2px solid var(--tj-green);
   border-radius: 12px;
   padding: 18px 20px;
-  background: var(--tj-light);
+  background: var(--panel-alt);
   display:flex; flex-direction:column; justify-content:center;
-  transition: transform .2s ease, background .2s ease, color .2s ease;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+  box-shadow: var(--shadow);
 }
 .link-card:hover { background: var(--tj-green); color: var(--tj-dark); transform: translateY(-2px); }
-.link-title { font-weight:700; font-size:1.1rem; margin:0 0 6px 0; color: var(--tj-dark); }
-.link-sub { color:#4B5563; margin:0; font-size:.9rem; }
+.link-title { font-weight:700; font-size:1.1rem; margin:0 0 6px 0; color: var(--text); }
+.link-sub { color: var(--muted); margin:0; font-size:.9rem; }
 .link-card:hover .link-title, .link-card:hover .link-sub { color: var(--tj-dark); }
 .icon { font-size:1.4rem; margin-bottom:8px; }
 
@@ -126,29 +159,30 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 
 .feature-card{
   display:block;
-  border:2px solid #cfeadf;              /* soft green outline like GitHub */
+  border:2px solid color-mix(in oklab, var(--tj-green) 45%, transparent);
   border-radius:12px;
   padding:16px 18px;
-  background:#fff;
-  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+  background: var(--panel);
+  transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
+  box-shadow: var(--shadow);
 }
 
 .feature-card:hover{
   transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,0,0,.06);
-  border-color:#9fd6c1;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
+  border-color: color-mix(in oklab, var(--tj-green) 70%, transparent);
 }
 
 .feature-card__icon{ font-size:1.6rem; line-height:1; margin-bottom:.25rem; }
-.feature-card__title{ font-weight:700; font-size:1.1rem; margin:.1rem 0 .2rem; color:var(--tj-dark); }
-.feature-card__subtitle{ color:#556; font-size:.95rem; }
+.feature-card__title{ font-weight:700; font-size:1.1rem; margin:.1rem 0 .2rem; color:var(--text); }
+.feature-card__subtitle{ color: var(--muted); font-size:.95rem; }
 
 /* Optional: small callout block used for “Quick Start” text */
 .quickstart{
   border-left:4px solid var(--tj-green);
   padding-left:12px;
   margin:8px 0 18px;
-  color:#374151;
+  color: var(--muted);
 }
 
 /* Stack feature cards on mobile */
@@ -160,8 +194,8 @@ footer a:hover { border-bottom-color: var(--tj-green); }
    Blog previews
    ============== */
 .post-item { border-left:4px solid var(--tj-green); padding-left:12px; margin:0 0 16px 0; }
-.post-item a { font-weight:700; color: var(--tj-dark); }
-.post-date { color:#6B7280; font-size:.9em; }
+.post-item a { font-weight:700; color: var(--text); }
+.post-date { color: var(--muted); font-size:.9em; }
 
 /* ======================
    Responsive adjustments
