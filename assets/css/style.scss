@@ -292,3 +292,12 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   outline-color: var(--accent-border);
 }
 #theme-toggle .icon { font-size:1rem; transform: translateY(1px); }
+
+
+/* Hide Minimal theme credits when they leak into the sidebar */
+.sidebar .site-footer,
+.sidebar .site-footer-credits,
+.sidebar .footer,
+.sidebar .footer-col,
+.sidebar hr { display: none !important; }
+
