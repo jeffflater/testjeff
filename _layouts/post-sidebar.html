@@ -2,58 +2,25 @@
 layout: sidebar
 ---
 
-<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+<article class="post">
   <header class="post-header">
-    <nav aria-label="Breadcrumb" class="post-breadcrumb">
-      <a href="{{ '/blog/' | relative_url }}">← Back to Blog</a>
-    </nav>
+    <h1 class="post-title">{{ page.title }}</h1>
 
-    {% if page.hero_image %}
-      <figure class="post-hero">
-        <img src="{{ page.hero_image | relative_url }}" alt="{{ page.hero_alt | default: page.title }}" loading="lazy" decoding="async">
-        {% if page.hero_caption %}<figcaption>{{ page.hero_caption }}</figcaption>{% endif %}
-      </figure>
-    {% endif %}
-
-    <h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
-
-    {% if page.date or page.tags %}
+    {% if page.date %}
     <p class="post-meta">
-      {% if page.date %}
-        <time itemprop="datePublished" datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%b %-d, %Y" }}
-        </time>
-      {% endif %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
       {% if page.tags and page.tags.size > 0 %}
-        • <span class="post-tags">
-          {% for tag in page.tags %}
-            <a class="post-tag" href="{{ '/tags/#' | append: tag | relative_url }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-          {% endfor %}
-        </span>
+        • {{ page.tags | array_to_sentence_string }}
       {% endif %}
-      {% if page.author %} • <span itemprop="author">{{ page.author }}</span>{% endif %}
     </p>
     {% endif %}
+
+    <hr>
   </header>
 
-  <section class="post-content" itemprop="articleBody">
+  <section class="post-content">
     {{ content }}
   </section>
-
-  <hr class="post-divider">
-
-  <footer class="post-footer">
-    <nav class="post-pager" aria-label="Post navigation">
-      <div class="post-prev">
-        {% if page.previous %}
-          ← <a href="{{ page.previous.url | relative_url }}" title="{{ page.previous.title }}">Previous: {{ page.previous.title }}</a>
-        {% endif %}
-      </div>
-      <div class="post-next">
-        {% if page.next %}
-          <a href="{{ page.next.url | relative_url }}" title="{{ page.next.title }}">Next: {{ page.next.title }}</a> →
-        {% endif %}
-      </div>
-    </nav>
-  </footer>
 </article>
