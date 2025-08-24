@@ -33,14 +33,19 @@
 
 /* Dark overrides */
 :root[data-theme='dark'] {
+  color-scheme: dark; /* lets browsers render native UI for dark */
   --bg: #0e1013;
   --panel: #12151a;
   --panel-alt: #101418;
   --text: #e5e7eb;
-  --muted: #9aa4b2;
+  --muted: #cbd5e1;              /* more readable than before */
   --line: rgba(255,255,255,0.14);
   --link: #dbeafe;
   --link-hover: #ffffff;
+
+  /* Dark accent */
+  --accent-border: #2dd4bf;      /* teal 400 */
+  --text-strong: #ffffff;
 
   --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 30px rgba(0,0,0,0.55);
 }
@@ -56,6 +61,7 @@ html, body { background: var(--bg); color: var(--text); }
 
 a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; }
 a:hover { color: var(--link-hover); border-bottom-color: var(--tj-green); }
+:root[data-theme='dark'] a:hover { border-bottom-color: var(--accent-border); }
 
 /* Header + Footer brand bars */
 header { border-bottom: 4px solid var(--tj-green); padding-bottom: 10px; margin-bottom: 18px; }
@@ -107,6 +113,7 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   line-height: 1.4;
 }
 
+/* Sidebar quick links */
 .quick-links { display: grid; gap: 12px; }
 .ql {
   display: block;
@@ -120,6 +127,12 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   box-shadow: var(--shadow);
 }
 .ql:hover { outline: 2px solid var(--tj-green); transform: translateY(-1px); }
+:root[data-theme='dark'] .ql {
+  background: #1a1d22;
+  color: var(--text-strong);
+  border: 1px solid #2c2f36;
+}
+:root[data-theme='dark'] .ql:hover { outline: 2px solid var(--accent-border); }
 
 .content { min-height: 80vh; }
 
@@ -146,9 +159,20 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 .link-card:hover .link-title, .link-card:hover .link-sub { color: var(--tj-dark); }
 .icon { font-size:1.4rem; margin-bottom:8px; }
 
+/* Dark tweaks for link cards */
+:root[data-theme='dark'] .link-card {
+  border: 2px solid var(--accent-border);
+  background: #1a1d22;
+}
+:root[data-theme='dark'] .link-card:hover {
+  background: var(--accent-border);
+  color: #0f172a;
+}
+:root[data-theme='dark'] .link-title { color: var(--text-strong); }
+:root[data-theme='dark'] .link-sub { color: var(--muted); }
+
 /* =========================================
    Courses & GitHub: two feature-card layout
-   (mirrors your GitHub page visual style)
    ========================================= */
 .feature-grid{
   display:grid;
@@ -166,22 +190,34 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   transition:transform .12s ease, box-shadow .12s ease, border-color .12s ease, background .12s ease;
   box-shadow: var(--shadow);
 }
-
 .feature-card:hover{
   transform:translateY(-2px);
   box-shadow:0 6px 18px rgba(0,0,0,.12);
   border-color: color-mix(in oklab, var(--tj-green) 70%, transparent);
 }
+/* Dark feature cards */
+:root[data-theme='dark'] .feature-card{
+  border-color: var(--accent-border);
+  background: #14181d;
+}
+:root[data-theme='dark'] .feature-card:hover{
+  border-color: #5eead4; /* teal 300 on hover */
+}
 
 .feature-card__icon{ font-size:1.6rem; line-height:1; margin-bottom:.25rem; }
 .feature-card__title{ font-weight:700; font-size:1.1rem; margin:.1rem 0 .2rem; color:var(--text); }
 .feature-card__subtitle{ color: var(--muted); font-size:.95rem; }
+:root[data-theme='dark'] .feature-card__title { color: var(--text-strong); }
 
 /* Optional: small callout block used for “Quick Start” text */
 .quickstart{
   border-left:4px solid var(--tj-green);
   padding-left:12px;
   margin:8px 0 18px;
+  color: var(--muted);
+}
+:root[data-theme='dark'] .quickstart{
+  border-left-color: var(--accent-border);
   color: var(--muted);
 }
 
@@ -196,17 +232,63 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 .post-item { border-left:4px solid var(--tj-green); padding-left:12px; margin:0 0 16px 0; }
 .post-item a { font-weight:700; color: var(--text); }
 .post-date { color: var(--muted); font-size:.9em; }
+/* Dark post-item accent */
+:root[data-theme='dark'] .post-item { border-left-color: var(--accent-border); }
+:root[data-theme='dark'] .post-item a { color: var(--text-strong); }
 
 /* ======================
    Responsive adjustments
    ====================== */
-/* Mobile: single column; stack brand card for tight spaces */
 @media (max-width: 860px) {
   .layout { grid-template-columns: 1fr; }
   .sidebar { position: static; top: auto; }
-  .brand-card { flex-direction: row; } /* keep side-by-side on tablets */
+  .brand-card { flex-direction: row; }
 }
 @media (max-width: 480px) {
   .brand-card { flex-direction: column; align-items: flex-start; }
   .brand-card img { width: 80px; }
 }
+
+/* Swap logos based on theme */
+.logo { display:block; }
+.logo--dark { display:none; }
+:root[data-theme='dark'] .logo--light { display:none; }
+:root[data-theme='dark'] .logo--dark  { display:block; }
+
+/* ===========================
+   Dark theme header/footer
+   =========================== */
+:root[data-theme='dark'] header { border-bottom-color: var(--accent-border); }
+:root[data-theme='dark'] footer {
+  border-top-color: var(--accent-border);
+  color: var(--muted);
+}
+:root[data-theme='dark'] footer a { color: var(--text-strong); }
+:root[data-theme='dark'] footer a:hover { border-bottom-color: var(--accent-border); }
+
+/* ===========================
+   Theme toggle button
+   =========================== */
+#theme-toggle.pill {
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border-radius:999px; cursor:pointer;
+  background: var(--panel-alt);
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  font-weight: 600;
+  line-height: 1;
+  transition: transform .12s ease, background .15s ease, border-color .15s ease, color .15s ease;
+}
+#theme-toggle.pill:hover { transform: translateY(-1px); outline: 2px solid var(--tj-green); }
+#theme-toggle.pill:focus-visible { outline: 2px solid var(--tj-green); outline-offset: 2px; }
+
+:root[data-theme='dark'] #theme-toggle.pill {
+  background: #1a1d22;
+  border-color: #2c2f36;
+}
+:root[data-theme='dark'] #theme-toggle.pill:hover,
+:root[data-theme='dark'] #theme-toggle.pill:focus-visible {
+  outline-color: var(--accent-border);
+}
+#theme-toggle .icon { font-size:1rem; transform: translateY(1px); }
