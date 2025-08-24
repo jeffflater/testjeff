@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: post-sidebar
 title: "🚀 New Course Release: API Testing with Python, Behave, VS Code & GitHub Copilot"
 ---
 

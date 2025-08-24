@@ -7,10 +7,16 @@ theme: jekyll-theme-minimal
 
 logo: /assets/img/testjeff-web-logo-min.png
 
-# Optional: nicer RSS + SEO (both supported by GitHub Pages)
+# Plugins (all are GitHub Pages–safe)
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+
+# Pagination settings
+paginate: 10
+paginate_path: "/blog/page:num"
 
 # Default front matter values
 defaults:
@@ -23,4 +29,4 @@ defaults:
       path: ""        # applies to all posts
       type: "posts"
     values:
-      layout: sidebar
+      layout: post-sidebar   # use new sidebar post layout
