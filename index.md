@@ -16,7 +16,7 @@ Here to help you level up fast with modern tools, smart workflows, and AI-powere
 <div class="links-grid">
   <a class="link-card" href="{{ '/community' | relative_url }}">
     <div class="icon">🤝</div>
-    <div class="link-title">Join Our Group</div>
+    <div class="link-title">Discord</div>
     <p class="link-sub">Community of Practice — free and simple</p>
   </a>
 
@@ -34,7 +34,7 @@ Here to help you level up fast with modern tools, smart workflows, and AI-powere
 
   <a class="link-card" href="{{ '/about' | relative_url }}">
     <div class="icon">🙋‍♂️</div>
-    <div class="link-title">About Jeff</div>
+    <div class="link-title">About</div>
     <p class="link-sub">Who I am and how I teach</p>
   </a>
 </div>

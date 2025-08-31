@@ -7,7 +7,7 @@ hero_alt: testJeff brand
 
 # 🤖 Test Automation Community of Practice (CoP)
 
-Welcome to the **Test Automation Community of Practice (CoP)** — hosted on [Skool](https://www.skool.com/test-automation-2381/about?ref=0e9720b6f3624bfea4710a21aed69e4e).  
+Welcome to the **Test Automation Community of Practice (CoP)** — now hosted on [Discord](https://discord.gg/QNZukDrP).  
 
 I’m **Jeff Flater** (aka *TestJeff*) and I’m excited to kick this off with you all. This community was built to bring together **testers, QA engineers, and developers** who want to **level up in automation, share real-world wins, and grow faster with AI-powered tools.**  
 
@@ -38,7 +38,7 @@ I’m **Jeff Flater** (aka *TestJeff*) and I’m excited to kick this off with y
 ---
 
 ## 🤝 How to Contribute
-1. **Introduce yourself** in the welcome thread 👋  
+1. **Introduce yourself** in the welcome channel 👋  
 2. **Ask questions** — no question is too basic or too advanced  
 3. **Share knowledge** — post wins, tools, or code snippets  
 4. **Join projects** — collaborate and learn through hands-on testing  
@@ -53,5 +53,4 @@ I’m **Jeff Flater** (aka *TestJeff*) and I’m excited to kick this off with y
 ---
 
 ## 🚀 Ready to Dive In?
-Click here to **[join the community on Skool](https://www.skool.com/test-automation-2381/about?ref=0e9720b6f3624bfea4710a21aed69e4e)** and become part of a growing network of automation enthusiasts pushing the future of testing forward.  
-
+Click here to **[join the community on Discord](https://discord.gg/QNZukDrP)** and become part of a growing network of automation enthusiasts pushing the future of testing forward.  
