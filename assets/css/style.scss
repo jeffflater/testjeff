@@ -312,3 +312,30 @@ footer a:hover {
 .sidebar hr {
   display: none !important;
 }
+
+
+/* ==================
+  Blog post layout
+  ================== */
+
+.post {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Fix overlapping long titles on posts */
+.post-title {
+  font-size: 2.2rem;      /* adjust as you like */
+  line-height: 1.25;      /* key fix: more breathing room */
+  margin: 0 0 0.75rem 0;
+}
+
+.post-header {
+  margin-bottom: 1rem;
+}
+
+.post-meta {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+  
