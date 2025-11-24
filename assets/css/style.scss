@@ -156,73 +156,59 @@ footer a:hover {
 /* ==================
    Home: link cards
    ================== */
-.links-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-  margin: 24px 0;
-}
-
-@media (min-width: 640px) {
-  .links-grid {
-    grid-template-columns: repeat(2, 1fr);
+   .links-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin: 24px 0;
   }
-}
-
-.link-card {
-  border: 2px solid var(--tj-green);
-  border-radius: 12px;
-  padding: 18px 20px;
-  background: var(--panel-alt);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
-  box-shadow: var(--shadow);
-}
-
-/* Hover: softer blue fill, white text */
-.link-card:hover {
-  background: var(--tj-accent-soft);
-  color: white;
-  border-color: var(--tj-green);
-  transform: translateY(-2px);
-}
-
-/* Title + subtitle text — lock weights so they don't jump */
-.link-title {
-  font-weight: 600;
-  font-size: 1.1rem;
-  margin: 0 0 6px 0;
-  color: var(--text);
-}
-
-.link-sub {
-  color: var(--muted);
-  margin: 0;
-  font-size: .9rem;
-  font-weight: 400;
-}
-
-/* ensure title + subtitle + icon go white, but keep same weight */
-.link-card:hover .link-title {
-  color: white;
-  font-weight: 600;
-}
-
-.link-card:hover .link-sub {
-  color: white;
-  font-weight: 400;
-}
-
-.link-card:hover .icon {
-  color: white;
-}
-
-.icon {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
+  
+  @media (min-width: 640px) {
+    .links-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .link-card {
+    border: 2px solid var(--tj-green);   /* keep the blue border */
+    border-radius: 12px;
+    padding: 18px 20px;
+    background: var(--panel-alt);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: none;   /* remove transitions */
+    color: var(--text);
+  }
+  
+  /* Remove ALL hover behavior */
+  .link-card:hover {
+    background: var(--panel-alt);
+    color: var(--text);
+    border-color: var(--tj-green);  /* keep outline */
+    transform: none;
+  }
+  
+  /* Title + subtitle normal */
+  .link-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 0 6px 0;
+    color: var(--text);
+  }
+  
+  .link-sub {
+    color: var(--muted);
+    margin: 0;
+    font-size: .9rem;
+  }
+  
+  .icon {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: inherit;  /* no hover color change */
+  }
 
 /* =========================================
    Courses & GitHub: two feature-card layout
