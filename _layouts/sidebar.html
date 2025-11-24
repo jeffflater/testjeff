@@ -5,20 +5,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
 
-  {%- comment -%}
-  Ensure theme is set before paint
-  {%- endcomment -%}
-  <script>
-  (function () {
-    try {
-      const stored = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const theme = stored || (prefersDark ? 'dark' : 'light');
-      document.documentElement.setAttribute('data-theme', theme);
-    } catch (e) { document.documentElement.setAttribute('data-theme', 'light'); }
-  })();
-  </script>
-
   {% include head-custom.html %}
 </head>
 <body>
@@ -28,50 +14,18 @@
       <aside class="sidebar" role="complementary">
         <figure class="brand-card">
           <a href="{{ '/' | relative_url }}" class="brand-link" aria-label="Back to Home">
-            <!-- Light/Dark logos (CSS-controlled) -->
-            <img
-              class="logo logo--light"
-              src="{{ site.logo_light | default: '/assets/img/testjeff-web-logo-min.png' | relative_url }}"
-              alt="{{ site.logo_light_alt | default: 'testJeff' }}"
-              width="320" height="320" loading="eager" decoding="async">
 
+            <!-- Single static logo -->
             <img
-              class="logo logo--dark"
-              src="{{ site.logo_dark | default: '/assets/img/testjeff-web-logo-min-darktheme.png' | relative_url }}"
-              alt="{{ site.logo_dark_alt | default: 'testJeff dark mode' }}"
-              width="320" height="320" loading="eager" decoding="async" aria-hidden="true">
+              class="logo"
+              src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}"
+              alt="testJeff"
+              width="320" height="320"
+              loading="eager" decoding="async">
           </a>
+
           <figcaption class="tagline">Smart Test Automation Made Simple.</figcaption>
         </figure>
-
-        <!-- Theme toggle -->
-        <button id="theme-toggle" class="pill" type="button"
-                aria-pressed="false" aria-label="Toggle theme"
-                style="margin:0 0 12px 0;">
-          <span id="theme-icon" aria-hidden="true">🌙</span>
-          <span id="theme-text">Theme</span>
-        </button>
-        <script>
-        (function () {
-          const btn  = document.getElementById('theme-toggle');
-          const icon = document.getElementById('theme-icon');
-          const text = document.getElementById('theme-text');
-          if (!btn) return;
-          const root = document.documentElement;
-
-          const get = () => root.getAttribute('data-theme') || 'light';
-          const set = (t) => {
-            root.setAttribute('data-theme', t);
-            try { localStorage.setItem('theme', t); } catch(e){}
-            btn.setAttribute('aria-pressed', String(t === 'dark'));
-            icon.textContent = t === 'dark' ? '☀️' : '🌙';
-            text.textContent = 'Theme';
-          };
-
-          set(get());                 // sync button with current theme
-          btn.addEventListener('click', () => set(get() === 'dark' ? 'light' : 'dark'));
-        })();
-        </script>
 
         <nav class="quick-links" aria-label="Quick links">
           <a class="ql" href="{{ '/'          | relative_url }}">🏠 Home</a>

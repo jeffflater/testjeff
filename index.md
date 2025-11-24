@@ -27,6 +27,12 @@ Here to help you level up fast with modern tools, smart workflows, and AI-powere
     <p class="link-sub">Repos, examples, and course code</p>
   </a>
 
+  <a class="link-card" href="{{ '/blog' | relative_url }}">
+    <div class="icon">📝</div>
+    <div class="link-title">Blog</div>
+    <p class="link-sub">Latest updates from the blog</p>
+  </a>
+
   <a class="link-card" href="{{ '/about' | relative_url }}">
     <div class="icon">🙋‍♂️</div>
     <div class="link-title">About</div>
