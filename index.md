@@ -14,11 +14,6 @@ Here to help you level up fast with modern tools, smart workflows, and AI-powere
 
 ## Quick Links
 <div class="links-grid">
-  <a class="link-card" href="{{ '/community' | relative_url }}">
-    <div class="icon">🤖</div>
-    <div class="link-title">Discord</div>
-    <p class="link-sub">Community of Practice — free and simple</p>
-  </a>
 
   <a class="link-card" href="{{ '/courses' | relative_url }}">
     <div class="icon">📚</div>
@@ -37,6 +32,7 @@ Here to help you level up fast with modern tools, smart workflows, and AI-powere
     <div class="link-title">About</div>
     <p class="link-sub">Who I am and how I teach</p>
   </a>
+
 </div>
 
 ---

@@ -25,7 +25,6 @@ My mission is to:
 ## What You’ll Find Here
 - 🎓 **Courses** built to be finished in a weekend — no fluff, just hands-on learning.  
 - 🛠️ **Open-source projects** like [Mock JSON API](https://github.com/jeffflater/mock-json-api), trusted by thousands of developers.  
-- 🌎 A growing [Test Automation Community on Skool](https://www.skool.com/test-automation-2381/about?ref=0e9720b6f3624bfea4710a21aed69e4e).  
 - 🚀 A focus on the **future of testing** — blending **AI and automation** for smarter workflows.  
 
 ## Beyond Tech
@@ -39,4 +38,3 @@ Outside of testing and teaching, I’m:
 📍 Connect with me:  
 - GitHub: [@jeffflater](https://github.com/jeffflater)  
 - Udemy: [My Courses](https://www.udemy.com/user/jeff-flater-3/)  
-- Community: [Join us on Skool](https://www.skool.com/test-automation-2381/about?ref=0e9720b6f3624bfea4710a21aed69e4e)  

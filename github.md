@@ -49,7 +49,6 @@ Thousands of downloads and growing — star ⭐ the repo and give it a try!
 
 ## 🌐 Connect
 - 🎥 [Courses on Udemy](https://www.udemy.com/course/testjeff-api-testing-using-python-behave-vs-code-github-copilot/?referralCode=A9712B7048F3109836AF)  
-- 💬 [Test Automation Community on Skool](https://www.skool.com/test-automation-2381/about?ref=0e9720b6f3624bfea4710a21aed69e4e)  
 - 🧑‍💻 Open source projects here on GitHub  
 
 ---
