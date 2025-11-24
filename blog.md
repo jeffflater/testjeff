@@ -6,27 +6,27 @@ hero_image: /assets/img/testjeff-web-logo-min.png
 hero_alt: Latest from the blog
 ---
 
+## Latest from the Blog
+
 {% assign posts_list = paginator.posts | default: site.posts %}
 
 {% if posts_list and posts_list.size > 0 %}
-<ul class="post-list">
-  {% for p in posts_list %}
-  <li class="post-list-item" style="margin:1rem 0;">
-    <a class="post-list-link" href="{{ p.url | relative_url }}">{{ p.title }}</a>
-    <span class="post-date" style="color:#6b7280; margin-left:.5rem;">
-      <time datetime="{{ p.date | date_to_xmlschema }}">{{ p.date | date: "%b %-d, %Y" }}</time>
-    </span>
-
-    {% if p.tags and p.tags.size > 0 %}
-      <span class="post-tags" style="margin-left:.5rem;">• {{ p.tags | array_to_sentence_string }}</span>
+  {% for post in posts_list %}
+  <div class="post-item">
+    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    <div class="post-date">
+      <time datetime="{{ post.date | date_to_xmlschema }}">
+        {{ post.date | date: "%B %-d, %Y" }}
+      </time>
+      {% if post.tags and post.tags.size > 0 %}
+        • {{ post.tags | array_to_sentence_string }}
+      {% endif %}
+    </div>
+    {% if post.excerpt %}
+      <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
     {% endif %}
-
-    {% if p.excerpt %}
-      <p class="post-excerpt">{{ p.excerpt | strip_html | truncate: 180 }}</p>
-    {% endif %}
-  </li>
+  </div>
   {% endfor %}
-</ul>
 {% else %}
 <p>No posts yet. 🚧 Check back soon!</p>
 {% endif %}
