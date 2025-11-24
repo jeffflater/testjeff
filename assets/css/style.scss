@@ -9,8 +9,8 @@
    ================================ */
 :root {
   /* Brand */
-  --tj-green: #1F3A93;  /* main accent */
-  --tj-accent-soft: #2E4FB3; /* slightly lighter blue for fills */
+  --tj-green: #1F3A93;        /* main accent */
+  --tj-accent-soft: #2E4FB3;  /* slightly lighter blue (unused now but kept) */
   --tj-dark:  #1E1E1E;
   --tj-light: #F9FAFB;
 
@@ -41,15 +41,21 @@ html, body {
   color: var(--text);
 }
 
+/* Anchor defaults – NO hover effect */
 a {
   color: var(--link);
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  border-bottom: none;
+  font-weight: inherit;
 }
 
-a:hover {
-  color: var(--link-hover);
-  border-bottom-color: var(--tj-green);
+a:hover,
+a:focus,
+a:active {
+  color: var(--link);
+  text-decoration: none;
+  border-bottom: none;
+  font-weight: inherit;
 }
 
 /* Header + Footer brand bars */
@@ -70,10 +76,6 @@ footer {
   margin-top: 32px;
   padding-top: 12px;
   color: var(--muted);
-}
-
-footer a:hover {
-  border-bottom-color: var(--tj-green);
 }
 
 /* ===========================
@@ -139,13 +141,19 @@ footer a:hover {
   text-decoration: none;
   color: var(--text);
   background: var(--panel-alt);
-  transition: transform .15s ease;
   box-shadow: var(--shadow);
+  transition: none; /* no hover animation */
 }
 
-.ql:hover {
-  outline: 2px solid var(--tj-green);
-  transform: translateY(-1px);
+/* Explicitly neutralize hover/focus on sidebar links */
+.ql:hover,
+.ql:focus,
+.ql:active {
+  outline: none;
+  transform: none;
+  border-color: var(--line);
+  background: var(--panel-alt);
+  color: var(--text);
 }
 
 /* Main content */
@@ -156,59 +164,61 @@ footer a:hover {
 /* ==================
    Home: link cards
    ================== */
-   .links-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin: 24px 0;
+
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+@media (min-width: 640px) {
+  .links-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  @media (min-width: 640px) {
-    .links-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
-  .link-card {
-    border: 2px solid var(--tj-green);   /* keep the blue border */
-    border-radius: 12px;
-    padding: 18px 20px;
-    background: var(--panel-alt);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-shadow: var(--shadow);
-    transition: none;   /* remove transitions */
-    color: var(--text);
-  }
-  
-  /* Remove ALL hover behavior */
-  .link-card:hover {
-    background: var(--panel-alt);
-    color: var(--text);
-    border-color: var(--tj-green);  /* keep outline */
-    transform: none;
-  }
-  
-  /* Title + subtitle normal */
-  .link-title {
-    font-weight: 700;
-    font-size: 1.1rem;
-    margin: 0 0 6px 0;
-    color: var(--text);
-  }
-  
-  .link-sub {
-    color: var(--muted);
-    margin: 0;
-    font-size: .9rem;
-  }
-  
-  .icon {
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-    color: inherit;  /* no hover color change */
-  }
+}
+
+.link-card {
+  border: 2px solid var(--tj-green);   /* blue outline stays */
+  border-radius: 12px;
+  padding: 18px 20px;
+  background: var(--panel-alt);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  color: var(--text);
+  transition: none;   /* no hover animation */
+}
+
+/* Completely neutral hover/focus/active */
+.link-card:hover,
+.link-card:focus,
+.link-card:active {
+  background: var(--panel-alt);
+  color: var(--text);
+  border-color: var(--tj-green);
+  transform: none;
+}
+
+.link-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 6px 0;
+  color: var(--text);
+}
+
+.link-sub {
+  color: var(--muted);
+  margin: 0;
+  font-size: .9rem;
+}
+
+.icon {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: inherit;
+}
 
 /* =========================================
    Courses & GitHub: two feature-card layout
@@ -226,14 +236,18 @@ footer a:hover {
   border-radius: 12px;
   padding: 16px 18px;
   background: var(--panel);
-  transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   box-shadow: var(--shadow);
+  transition: none;  /* no hover animation */
 }
 
-.feature-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.12);
-  border-color: var(--tj-green);  /* use brand blue on hover */
+/* Neutralize hover for feature cards as well */
+.feature-card:hover,
+.feature-card:focus,
+.feature-card:active {
+  border-color: var(--tj-green);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  transform: none;
 }
 
 .feature-card__icon {
