@@ -5,7 +5,7 @@ hero_image: /assets/img/testjeff-web-logo-min.png
 hero_alt: About Jeff illustration
 ---
 
-# About Me
+# 🐱 About Me
 
 👋 I’m **Jeff Flater**, the **creator of TestJeff**.  
 

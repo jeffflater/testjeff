@@ -6,7 +6,7 @@ hero_image: /assets/img/testjeff-web-logo-min.png
 hero_alt: Latest from the blog
 ---
 
-## Latest from the Blog
+# 📝 Latest from the Blog
 
 {% assign posts_list = paginator.posts | default: site.posts %}
 

@@ -5,7 +5,7 @@ hero_image: /assets/img/testjeff-web-logo-min.png
 hero_alt: testJeff brand
 ---
 
-# 📘 TestJeff Courses  
+# 📚 TestJeff Courses  
 
 Hi, I’m **Jeff Flater** — creator of **TestJeff Courses** 👋  
 I build **hands-on, practical courses** to help testers, developers, and automation engineers **level up their test automation skills**.  
