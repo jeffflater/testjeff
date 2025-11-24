@@ -1,3 +1,7 @@
+---
+# Jekyll processes this SCSS into /assets/css/style.css
+---
+
 @import "{{ site.theme }}";  /* Load the Minimal theme first */
 
 /* ================================
@@ -14,7 +18,7 @@
   --sidebar-w: 320px;
   --radius: 14px;
 
-  /* Light mode only (no dark theme) */
+  /* Light mode (single theme) */
   --bg: #ffffff;
   --panel: #ffffff;
   --panel-alt: #F6F8FA;
@@ -25,14 +29,16 @@
   --link-hover: var(--text);
 
   --shadow: 0 1px 2px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.06);
-
   --border: 1px solid var(--line);
 }
 
 /* =============
    Global tweaks
    ============= */
-html, body { background: var(--bg); color: var(--text); }
+html, body {
+  background: var(--bg);
+  color: var(--text);
+}
 
 a {
   color: var(--link);
@@ -52,7 +58,11 @@ header {
   margin-bottom: 18px;
 }
 
-header h1, header h2, header a { color: var(--text); }
+header h1,
+header h2,
+header a {
+  color: var(--text);
+}
 
 footer {
   border-top: 4px solid var(--tj-green);
@@ -61,7 +71,9 @@ footer {
   color: var(--muted);
 }
 
-footer a:hover { border-bottom-color: var(--tj-green); }
+footer a:hover {
+  border-bottom-color: var(--tj-green);
+}
 
 /* ===========================
    Sticky Sidebar Layout
@@ -71,6 +83,11 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   grid-template-columns: var(--sidebar-w) 1fr;
   gap: var(--gap);
   align-items: start;
+}
+
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .sidebar {
@@ -108,7 +125,10 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 }
 
 /* Sidebar quick links */
-.quick-links { display: grid; gap: 12px; }
+.quick-links {
+  display: grid;
+  gap: 12px;
+}
 
 .ql {
   display: block;
@@ -128,9 +148,9 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 }
 
 /* Main content */
-.content { min-height: 80vh; }
-
-.wrapper { max-width: 1100px; }
+.content {
+  min-height: 80vh;
+}
 
 /* ==================
    Home: link cards
@@ -142,8 +162,10 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   margin: 24px 0;
 }
 
-@media (min-width:640px){
-  .links-grid { grid-template-columns: repeat(2,1fr); }
+@media (min-width: 640px) {
+  .links-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .link-card {
@@ -151,9 +173,9 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   border-radius: 12px;
   padding: 18px 20px;
   background: var(--panel-alt);
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   transition: transform .2s ease, background .2s ease, color .2s ease;
   box-shadow: var(--shadow);
 }
@@ -165,16 +187,16 @@ footer a:hover { border-bottom-color: var(--tj-green); }
 }
 
 .link-title {
-  font-weight:700;
-  font-size:1.1rem;
-  margin:0 0 6px 0;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 6px 0;
   color: var(--text);
 }
 
 .link-sub {
   color: var(--muted);
-  margin:0;
-  font-size:.9rem;
+  margin: 0;
+  font-size: .9rem;
 }
 
 .link-card:hover .link-title,
@@ -182,71 +204,104 @@ footer a:hover { border-bottom-color: var(--tj-green); }
   color: var(--tj-dark);
 }
 
-.icon { font-size:1.4rem; margin-bottom:8px; }
+.icon {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
 
 /* =========================================
    Courses & GitHub: two feature-card layout
    ========================================= */
 .feature-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--gap);
-  margin:16px 0 22px;
+  margin: 16px 0 22px;
 }
 
 .feature-card {
-  display:block;
-  border:2px solid color-mix(in oklab, var(--tj-green) 45%, transparent);
-  border-radius:12px;
-  padding:16px 18px;
+  display: block;
+  border: 2px solid var(--tj-green);
+  border-radius: 12px;
+  padding: 16px 18px;
   background: var(--panel);
   transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
   box-shadow: var(--shadow);
 }
 
 .feature-card:hover {
-  transform:translateY(-2px);
-  box-shadow:0 6px 18px rgba(0,0,0,.12);
-  border-color: color-mix(in oklab, var(--tj-green) 70%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.12);
+  border-color: #27b873;
 }
 
-.feature-card__icon { font-size:1.6rem; margin-bottom:.25rem; }
-.feature-card__title { font-weight:700; font-size:1.1rem; margin:.1rem 0 .2rem; color:var(--text); }
-.feature-card__subtitle { color: var(--muted); font-size:.95rem; }
+.feature-card__icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: .25rem;
+}
+
+.feature-card__title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: .1rem 0 .2rem;
+  color: var(--text);
+}
+
+.feature-card__subtitle {
+  color: var(--muted);
+  font-size: .95rem;
+}
 
 /* Quickstart callout */
 .quickstart {
-  border-left:4px solid var(--tj-green);
-  padding-left:12px;
-  margin:8px 0 18px;
+  border-left: 4px solid var(--tj-green);
+  padding-left: 12px;
+  margin: 8px 0 18px;
   color: var(--muted);
-}
-
-/* Mobile layout */
-@media (max-width: 720px){
-  .feature-grid{ grid-template-columns:1fr; }
 }
 
 /* Blog previews */
 .post-item {
-  border-left:4px solid var(--tj-green);
-  padding-left:12px;
-  margin:0 0 16px 0;
+  border-left: 4px solid var(--tj-green);
+  padding-left: 12px;
+  margin: 0 0 16px 0;
 }
 
-.post-item a { font-weight:700; color: var(--text); }
+.post-item a {
+  font-weight: 700;
+  color: var(--text);
+}
 
-.post-date { color: var(--muted); font-size:.9em; }
+.post-date {
+  color: var(--muted);
+  font-size: .9em;
+}
 
-/* Responsive */
+/* ======================
+   Responsive adjustments
+   ====================== */
 @media (max-width: 860px) {
-  .layout { grid-template-columns: 1fr; }
-  .sidebar { position: static; top: auto; }
-  .brand-card { flex-direction: row; }
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    position: static;
+    top: auto;
+  }
+  .brand-card {
+    flex-direction: row;
+  }
 }
+
 @media (max-width: 480px) {
-  .brand-card { flex-direction: column; align-items: flex-start; }
-  .brand-card img { width: 80px; }
+  .brand-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .brand-card img {
+    width: 80px;
+  }
 }
 
 /* Hide Minimal theme credits when they leak into the sidebar */
