@@ -261,7 +261,9 @@ footer a:hover {
   color: var(--muted);
 }
 
-/* Blog previews */
+/* ==============
+   Blog previews
+   ============== */
 .post-item {
   border-left: 4px solid var(--tj-green);
   padding-left: 12px;
@@ -312,64 +314,3 @@ footer a:hover {
 .sidebar hr {
   display: none !important;
 }
-
-
-/* ==================
-   Blog post overrides
-   ================== */
-
-   .post {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  
-  /* Hard override any weird inherited styles */
-  .post-title {
-    font-size: 2.2rem !important;
-    line-height: 1.25 !important;
-    margin: 0 0 0.75rem 0 !important;
-    position: static !important;
-    display: block !important;
-    white-space: normal !important;
-  }
-  
-  .post-header {
-    margin-bottom: 1rem;
-  }
-  
-  .post-meta {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  
-/* ==================
-   TestJeff blog posts
-   ================== */
-
-   .tj-post {
-    max-width: 720px;
-    margin: 0 auto;
-  }
-  
-  .tj-post-header {
-    margin-bottom: 1rem;
-  }
-  
-  .tj-post-title {
-    font-size: 2.4rem;
-    line-height: 1.25;
-    margin: 0 0 0.75rem 0;
-    font-weight: 700;
-    color: var(--text);
-  }
-  
-  .tj-post-meta {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-  
-  .tj-post-content {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-  
