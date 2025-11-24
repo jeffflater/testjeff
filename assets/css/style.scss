@@ -181,7 +181,7 @@ footer a:hover {
   box-shadow: var(--shadow);
 }
 
-/* Hover: softer blue fill, white text, no bold jump */
+/* Hover: softer blue fill, white text */
 .link-card:hover {
   background: var(--tj-accent-soft);
   color: white;
@@ -189,8 +189,9 @@ footer a:hover {
   transform: translateY(-2px);
 }
 
+/* Title + subtitle text — lock weights so they don't jump */
 .link-title {
-  font-weight: 700;
+  font-weight: 600;
   font-size: 1.1rem;
   margin: 0 0 6px 0;
   color: var(--text);
@@ -200,12 +201,18 @@ footer a:hover {
   color: var(--muted);
   margin: 0;
   font-size: .9rem;
+  font-weight: 400;
 }
 
 /* ensure title + subtitle + icon go white, but keep same weight */
-.link-card:hover .link-title,
+.link-card:hover .link-title {
+  color: white;
+  font-weight: 600;
+}
+
 .link-card:hover .link-sub {
   color: white;
+  font-weight: 400;
 }
 
 .link-card:hover .icon {
