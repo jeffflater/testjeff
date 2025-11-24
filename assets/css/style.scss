@@ -9,7 +9,8 @@
    ================================ */
 :root {
   /* Brand */
-  --tj-green: #1F3A93;  /* code brackets / accent */
+  --tj-green: #1F3A93;  /* main accent */
+  --tj-accent-soft: #2E4FB3; /* slightly lighter blue for fills */
   --tj-dark:  #1E1E1E;
   --tj-light: #F9FAFB;
 
@@ -176,13 +177,15 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  transition: transform .2s ease, background .2s ease, color .2s ease;
+  transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
   box-shadow: var(--shadow);
 }
 
+/* Hover: softer blue fill, white text, no bold jump */
 .link-card:hover {
-  background: var(--tj-green);
-  color: var(--tj-dark);
+  background: var(--tj-accent-soft);
+  color: white;
+  border-color: var(--tj-green);
   transform: translateY(-2px);
 }
 
@@ -199,9 +202,14 @@ footer a:hover {
   font-size: .9rem;
 }
 
+/* ensure title + subtitle + icon go white, but keep same weight */
 .link-card:hover .link-title,
 .link-card:hover .link-sub {
-  color: var(--tj-dark);
+  color: white;
+}
+
+.link-card:hover .icon {
+  color: white;
 }
 
 .icon {
