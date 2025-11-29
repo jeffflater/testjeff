@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="theme-color" content="#0A0E27">
 
   {% include head-custom.html %}
 </head>
@@ -14,8 +15,6 @@
       <aside class="sidebar" role="complementary">
         <figure class="brand-card">
           <a href="{{ '/' | relative_url }}" class="brand-link" aria-label="Back to Home">
-
-            <!-- Single static logo -->
             <img
               class="logo"
               src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}"
@@ -23,15 +22,22 @@
               width="320" height="320"
               loading="eager" decoding="async">
           </a>
-
           <figcaption class="tagline">Smart Test Automation Made Simple.</figcaption>
         </figure>
 
         <nav class="quick-links" aria-label="Quick links">
-          <a class="ql" href="{{ '/courses'   | relative_url }}">📚 Courses</a>
-          <a class="ql" href="{{ '/github'    | relative_url }}">🐙 GitHub</a>
-          <a class="ql" href="{{ '/blog/'     | relative_url }}">📝 Blog</a>
-          <a class="ql" href="{{ '/about'     | relative_url }}">🐱 About</a>
+          <a class="ql" href="{{ '/courses' | relative_url }}">
+            <span aria-hidden="true">📚</span> Courses
+          </a>
+          <a class="ql" href="{{ '/github' | relative_url }}">
+            <span aria-hidden="true">🐙</span> GitHub
+          </a>
+          <a class="ql" href="{{ '/blog/' | relative_url }}">
+            <span aria-hidden="true">📝</span> Blog
+          </a>
+          <a class="ql" href="{{ '/about' | relative_url }}">
+            <span aria-hidden="true">🐱</span> About
+          </a>
         </nav>
       </aside>
 
