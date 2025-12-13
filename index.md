@@ -114,10 +114,10 @@ title: Learn API Test Automation with Jeff Flater
       <h2 class="section__title">Meet Your Instructor</h2>
     </div>
 
-    <div style="display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start;">
-      <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="Jeff Flater" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover; border: 4px solid var(--udemy-purple);">
+    <div class="instructor-grid">
+      <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="Jeff Flater" class="instructor-image">
 
-      <div>
+      <div class="instructor-content">
         <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Jeff Flater</h3>
         <p style="color: var(--text-secondary); margin-bottom: 16px;">Test Automation Expert • Course Creator • Open Source Contributor</p>
 

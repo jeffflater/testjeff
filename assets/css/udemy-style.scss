@@ -492,6 +492,28 @@ img {
 }
 
 /* ===========================
+   INSTRUCTOR SECTION
+   =========================== */
+.instructor-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.instructor-image {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border: 4px solid var(--udemy-purple);
+}
+
+.instructor-content {
+  min-width: 0;
+}
+
+/* ===========================
    FOOTER (Udemy Style)
    =========================== */
 .footer {
@@ -622,6 +644,22 @@ img {
 
   .btn--large {
     width: 100%;
+  }
+
+  /* Instructor section - stack on mobile */
+  .instructor-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .instructor-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .instructor-content {
+    text-align: left;
   }
 }
 
