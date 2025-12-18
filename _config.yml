@@ -1,6 +1,7 @@
 title: testjeff
 description: Sharing practical test automation with Python, Behave, VS Code & GitHub Copilot.
 theme: jekyll-theme-minimal
+url: "https://testjeff.com"
 
 # If this is a PROJECT site (not username.github.io), set baseurl:
 # baseurl: "/YOUR_REPO_NAME"
