@@ -6,7 +6,10 @@ title: About Jeff Flater
 <section class="hero">
   <div class="container">
     <div style="display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: center;">
-      <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="Jeff Flater" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover; border: 4px solid var(--udemy-purple);">
+      <picture>
+        <source srcset="{{ '/assets/img/testjeff-web-logo-min.webp' | relative_url }}" type="image/webp">
+        <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="Jeff Flater" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover; border: 4px solid var(--udemy-purple);">
+      </picture>
       <div>
         <h1 class="hero__title" style="margin-bottom: 8px;">Jeff Flater</h1>
         <p class="hero__subtitle">Test Automation Expert • Course Creator • Open Source Contributor</p>

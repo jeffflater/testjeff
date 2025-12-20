@@ -15,12 +15,15 @@
       <aside class="sidebar" role="complementary">
         <figure class="brand-card">
           <a href="{{ '/' | relative_url }}" class="brand-link" aria-label="Back to Home">
-            <img
-              class="logo"
-              src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}"
-              alt="testJeff"
-              width="320" height="320"
-              loading="eager" decoding="async">
+            <picture>
+              <source srcset="{{ '/assets/img/testjeff-web-logo-min.webp' | relative_url }}" type="image/webp">
+              <img
+                class="logo"
+                src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}"
+                alt="testJeff"
+                width="320" height="320"
+                loading="eager" decoding="async">
+            </picture>
           </a>
           <figcaption class="tagline">Smart Test Automation Made Simple.</figcaption>
         </figure>

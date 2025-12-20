@@ -21,7 +21,10 @@ title: Courses by Jeff Flater
 
     <div class="featured-course">
       <div class="featured-course__grid">
-        <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="API Testing Course" class="featured-course__image">
+        <picture>
+          <source srcset="{{ '/assets/img/testjeff-web-logo-min.webp' | relative_url }}" type="image/webp">
+          <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="API Testing Course" class="featured-course__image">
+        </picture>
 
         <div class="featured-course__content">
           <div class="featured-course__badge">

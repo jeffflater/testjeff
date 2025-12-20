@@ -26,7 +26,10 @@ title: Learn API Test Automation with Jeff Flater
   <div class="container">
     <div class="featured-course">
       <div class="featured-course__grid">
-        <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="API Testing Course" class="featured-course__image">
+        <picture>
+          <source srcset="{{ '/assets/img/testjeff-web-logo-min.webp' | relative_url }}" type="image/webp">
+          <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="API Testing Course" class="featured-course__image">
+        </picture>
 
         <div class="featured-course__content">
           <div class="featured-course__badge">
@@ -115,7 +118,10 @@ title: Learn API Test Automation with Jeff Flater
     </div>
 
     <div class="instructor-grid">
-      <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="Jeff Flater" class="instructor-image">
+      <picture>
+        <source srcset="{{ '/assets/img/testjeff-web-logo-min.webp' | relative_url }}" type="image/webp">
+        <img src="{{ '/assets/img/testjeff-web-logo-min.png' | relative_url }}" alt="Jeff Flater" class="instructor-image">
+      </picture>
 
       <div class="instructor-content">
         <h3 style="font-size: 1.5rem; margin-bottom: 8px;">Jeff Flater</h3>

@@ -212,7 +212,8 @@ footer {
   opacity: 0.5;
 }
 
-.brand-card img {
+.brand-card img,
+.brand-card picture img {
   width: 120px;
   height: auto;
   border-radius: 12px;
@@ -220,6 +221,11 @@ footer {
   border: 2px solid var(--tj-primary);
   box-shadow: var(--shadow-glow);
   transition: transform 0.3s ease;
+}
+
+.brand-card picture {
+  display: block;
+  flex-shrink: 0;
 }
 
 .brand-card:hover img {
@@ -550,7 +556,8 @@ footer {
     backdrop-filter: blur(10px);
   }
 
-  .brand-card img {
+  .brand-card img,
+  .brand-card picture img {
     width: 80px;
   }
 
@@ -578,7 +585,8 @@ footer {
     text-align: center;
   }
 
-  .brand-card img {
+  .brand-card img,
+  .brand-card picture img {
     width: 100px;
   }
 

@@ -111,6 +111,15 @@ img {
   display: block;
 }
 
+picture {
+  display: block;
+}
+
+picture img {
+  width: 100%;
+  height: 100%;
+}
+
 /* ===========================
    LAYOUT UTILITIES
    =========================== */
@@ -153,10 +162,15 @@ img {
   flex-shrink: 0;
 }
 
-.navbar__logo {
+.navbar__logo,
+.navbar__brand picture img {
   width: 40px;
   height: 40px;
   border-radius: 4px;
+}
+
+.navbar__brand picture {
+  display: flex;
 }
 
 .navbar__title {
@@ -435,10 +449,16 @@ img {
   gap: 0;
 }
 
-.featured-course__image {
+.featured-course__image,
+.featured-course__grid picture img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  min-height: 400px;
+}
+
+.featured-course__grid > picture {
+  display: block;
   min-height: 400px;
 }
 
@@ -501,12 +521,20 @@ img {
   align-items: start;
 }
 
-.instructor-image {
+.instructor-image,
+.instructor-grid picture img {
   border-radius: 50%;
   width: 200px;
   height: 200px;
   object-fit: cover;
   border: 4px solid var(--udemy-purple);
+}
+
+.instructor-grid > picture {
+  display: block;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
 }
 
 .instructor-content {
@@ -652,7 +680,14 @@ img {
     text-align: center;
   }
 
-  .instructor-image {
+  .instructor-image,
+  .instructor-grid picture img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+  }
+
+  .instructor-grid > picture {
     width: 150px;
     height: 150px;
     margin: 0 auto;
